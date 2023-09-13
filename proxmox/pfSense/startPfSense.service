@@ -1,0 +1,10 @@
+[Unit]
+Description=Start PfSense without quorum
+After=pve-cluster.service
+
+[Service]
+type=oneshot
+ExecStart=/root/startPfSense.sh
+
+[Install]
+WantedBy=multi-user.target
