@@ -71,8 +71,7 @@ if __name__ == "__main__":
         }]
         response = requests.post(apiEndpoint, headers=headers, data=json.dumps(payload))
 
-    if response is not None:
-        if response.status_code == 200:
+    if response is not None and response.status_code == 200:
             print(f"IP address {ipAddr} {action} to the custom IP list successfully.")
     else:
         print(f"Failed to {action} IP address {ipAddr} to the custom IP list.")
